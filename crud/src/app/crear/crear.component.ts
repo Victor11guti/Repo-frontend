@@ -13,7 +13,7 @@ import { IUser } from '../models/userInterface';
 })
 export class CrearComponent implements OnInit {
 @HostBinding('class') clases = 'row';
-user :any;
+user  =  new User();
   saveForm = new FormGroup({
     name : new FormControl('',[Validators.required]),
     status : new FormControl('',[Validators.required]),

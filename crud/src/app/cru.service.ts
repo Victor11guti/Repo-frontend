@@ -30,8 +30,8 @@ export class CruService {
   }
 
 
-  getOneUser(id: number){
-    return this.http.get(`${this.API_URL}/listar-uno/${id})`);
+  getOneUser(id: Number):Observable<User>{
+    return this.http.get<User>(`${this.API_URL}/listar-uno/${id}`);
   }
 
   deletUser(id: number):Observable<any>{
