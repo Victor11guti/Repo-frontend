@@ -1,0 +1,29 @@
+<div class="container" style="padding-top: 40px;">
+
+    <h1>Usuarios</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Opcion</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let users of user">
+                <td>{{users.id}}</td>
+                <td>{{users.name}}</td>
+                <td>{{users.status}}</td>
+                <td>{{users?.rol?.id_rol}}</td>
+                <td><a class="btn btn-warning" [routerLink]="['/editar',users.id]">Editar</a>
+                
+                <a class="btn btn-danger"  (click)="deletUser(users.id)" >Eliminar</a>
+                </td>
+            </tr>
+          
+        </tbody>
+      </table>
+
+</div>

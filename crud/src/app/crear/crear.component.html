@@ -1,0 +1,47 @@
+<div class="container-fluid h-100 bg-light text-dark">
+    <div class="row justify-content-center align-items-center">
+      <h1>Crear/Actualizar</h1>    
+    </div>
+    <hr/>
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <form [formGroup]="saveForm" (ngSubmit)="edit ? updateUser() : saveUser()">
+          <div class="form-group">
+            <select class="form-control"  [(ngModel)]="userI.rol" formControlName="rol" >
+                      <option value =1> ADMIN</option>
+                      <option value=2>AUDI</option>
+                      <option value=3>AUX</option>
+                    </select>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="userI.name" class="form-control"  formControlName="name" />
+          </div>
+          <div class="form-group text-center">
+            <div class="form-check-inline">
+              <label class="form-check-label">
+      <input type="radio" class="form-check-input" [(ngModel)]="userI.status"  formControlName="status">Activo
+    </label>
+    
+            </div>
+            <div class="form-check-inline">
+             
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" [(ngModel)]="userI.status"  formControlName="status">InActivo
+                  </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="container">
+              <div class="row">
+                <div class="col"><button class="col-6 btn btn-secondary btn-sm float-left">Reiniciar</button></div>
+                <div class="col"><button class="col-6 btn btn-primary btn-sm float-right">Guardar</button></div>
+              </div>
+            </div>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>
